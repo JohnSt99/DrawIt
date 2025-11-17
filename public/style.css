@@ -1,0 +1,266 @@
+:root {
+  --bg: #0e141b;
+  --card: #1a2330;
+  --accent: #5ee0b1;
+  --text: #e9eef5;
+  --muted: #9fb3c8;
+  --danger: #ff7b7b;
+  --shadow: rgba(0, 0, 0, 0.2);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: radial-gradient(circle at top left, rgba(94, 224, 177, 0.15), transparent 30%),
+    radial-gradient(circle at bottom right, rgba(94, 160, 224, 0.12), transparent 30%),
+    var(--bg);
+  color: var(--text);
+}
+
+.page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 18px 48px;
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: 32px;
+}
+
+.subtitle {
+  margin: 4px 0 0;
+  color: var(--muted);
+}
+
+.badge {
+  background: rgba(94, 224, 177, 0.1);
+  border: 1px solid rgba(94, 224, 177, 0.4);
+  color: var(--text);
+  padding: 8px 12px;
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow: 0 20px 40px var(--shadow);
+}
+
+#join-panel {
+  margin-top: 20px;
+}
+
+.join-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+input,
+button,
+textarea {
+  font: inherit;
+}
+
+input,
+textarea {
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text);
+}
+
+button {
+  border: none;
+  border-radius: 12px;
+  padding: 12px 16px;
+  font-weight: 700;
+  cursor: pointer;
+  background: linear-gradient(135deg, #5ee0b1, #5ea7e0);
+  color: #0e141b;
+  box-shadow: 0 10px 20px rgba(94, 224, 177, 0.25);
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(94, 224, 177, 0.35);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+button.ghost {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text);
+  box-shadow: none;
+}
+
+.hint {
+  color: var(--muted);
+  margin-top: 8px;
+}
+
+.error {
+  color: var(--danger);
+  min-height: 20px;
+}
+
+.game {
+  margin-top: 22px;
+}
+
+.hidden {
+  display: none;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  gap: 12px;
+}
+
+.status {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.word-label {
+  margin-top: 6px;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 14px;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 640px;
+}
+
+.section-title {
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+
+.player-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.player-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.player-item.drawer {
+  border: 1px dashed rgba(94, 224, 177, 0.4);
+}
+
+.score {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.messages {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 10px;
+  padding: 10px;
+  overflow-y: auto;
+  min-height: 200px;
+  max-height: 300px;
+}
+
+.message { margin-bottom: 8px; }
+.message .author { font-weight: 700; }
+.message .system { color: var(--muted); }
+
+.guess-form {
+  display: flex;
+  gap: 8px;
+}
+
+.guess-form input { flex: 1; }
+
+.canvas-area {
+  min-height: 640px;
+}
+
+.canvas-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.canvas-actions { display: flex; gap: 8px; }
+
+#board {
+  margin-top: 10px;
+  width: 100%;
+  background: #e5e7eb;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  touch-action: none;
+}
+
+.note {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+  .sidebar {
+    min-height: auto;
+  }
+  .hero {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  #board {
+    height: 260px;
+  }
+}

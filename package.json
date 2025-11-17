@@ -1,0 +1,15 @@
+{
+  "name": "drawit",
+  "version": "1.0.0",
+  "description": "Lightweight Draw It web app with lobby and point-based guessing",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": ["draw", "socket.io", "game"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {}
+}
