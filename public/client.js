@@ -238,11 +238,12 @@ function drawFromData(point, isLocal) {
 }
 
 function pointerPos(evt) {
-  const rect = canvas.getBoundingClientRect();
+
   const ratio = canvas.width / rect.width;
   return {
     x: ((evt.clientX || (evt.touches?.[0]?.clientX || 0)) - rect.left) * ratio,
     y: ((evt.clientY || (evt.touches?.[0]?.clientY || 0)) - rect.top) * ratio
+
   };
 }
 
@@ -263,7 +264,7 @@ function moveStroke(evt) {
   evt.preventDefault();
   const current = pointerPos(evt);
   if (!lastPoint) {
-    lastPoint = current;
+0
     return;
   }
   const point = { from: lastPoint, to: current };

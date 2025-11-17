@@ -238,7 +238,9 @@ button.ghost {
 #board {
   margin-top: 10px;
   width: 100%;
+
   background: #0b1017;
+
   border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 12px;
   touch-action: none;
