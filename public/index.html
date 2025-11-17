@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Draw It Lobby</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div class="page">
+    <header class="hero">
+      <div>
+        <h1>Draw It</h1>
+        <p class="subtitle">Join as a guest and guess early to earn more points.</p>
+      </div>
+      <div class="badge">Up to 10 players</div>
+    </header>
+
+    <section id="join-panel" class="card">
+      <h2>Join the lobby</h2>
+      <div class="join-row">
+        <input id="name-input" type="text" maxlength="18" placeholder="Pick a nickname" aria-label="Nickname" />
+        <button id="join-btn">Join</button>
+      </div>
+      <p class="hint">No login required. Share the page with friends on the same network.</p>
+      <p id="join-error" class="error" role="alert"></p>
+    </section>
+
+    <section id="game" class="game hidden">
+      <div class="top-bar">
+        <div>
+          <div class="status" id="status-text">Waiting to start…</div>
+          <div id="word-reveal" class="word-label"></div>
+        </div>
+        <div class="controls">
+          <button id="start-btn">Start round</button>
+          <button id="end-btn" class="ghost">End round</button>
+        </div>
+      </div>
+
+      <div class="layout">
+        <aside class="sidebar card">
+          <div class="section-title">Players</div>
+          <ul id="player-list" class="player-list"></ul>
+          <div class="section-title">Messages</div>
+          <div id="messages" class="messages"></div>
+          <form id="guess-form" class="guess-form">
+            <input id="guess-input" type="text" placeholder="Type your guess" autocomplete="off" />
+            <button type="submit">Send</button>
+          </form>
+        </aside>
+
+        <main class="canvas-area card">
+          <div class="canvas-header">
+            <div>
+              <div class="section-title">Drawing board</div>
+              <div class="note">Only the current drawer can paint. Use your finger on mobile.</div>
+            </div>
+            <div class="canvas-actions">
+              <button id="clear-btn" class="ghost">Clear</button>
+            </div>
+          </div>
+          <canvas id="board" width="900" height="600"></canvas>
+        </main>
+      </div>
+    </section>
+  </div>
+
+  <script src="/client.js"></script>
+</body>
+</html>
