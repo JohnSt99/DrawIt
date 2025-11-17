@@ -18,7 +18,7 @@ const ctx = canvas.getContext('2d');
 ctx.lineJoin = 'round';
 ctx.lineCap = 'round';
 ctx.lineWidth = 4;
-ctx.strokeStyle = '#f1f5f9';
+ctx.strokeStyle = '#0f172a';
 
 let playerId = null;
 let isDrawer = false;
@@ -238,12 +238,11 @@ function drawFromData(point, isLocal) {
 }
 
 function pointerPos(evt) {
-
-  const ratio = canvas.width / rect.width;
+  const rect = canvas.getBoundingClientRect();
+  const point = evt.touches?.[0] || evt;
   return {
-    x: ((evt.clientX || (evt.touches?.[0]?.clientX || 0)) - rect.left) * ratio,
-    y: ((evt.clientY || (evt.touches?.[0]?.clientY || 0)) - rect.top) * ratio
-
+    x: (point.clientX || 0) - rect.left,
+    y: (point.clientY || 0) - rect.top
   };
 }
 
@@ -264,7 +263,6 @@ function moveStroke(evt) {
   evt.preventDefault();
   const current = pointerPos(evt);
   if (!lastPoint) {
-0
     return;
   }
   const point = { from: lastPoint, to: current };
